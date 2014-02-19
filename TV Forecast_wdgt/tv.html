@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+	<script type='text/javascript' src='file:///System/Library/WidgetResources/button/genericButton.js' charset='utf-8'/>
+	<script type='text/javascript' src='file:///System/Library/WidgetResources/AppleClasses/AppleButton.js' charset='utf-8'></script>
+	<script type="text/javascript" src="prototype.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Widget/XML.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Widget/DateTime.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Widget/VersionChecker.js" charset="utf-8"></script>
+	<script type="text/javascript" src="TV/Functions.js" charset="utf-8"></script>
+	<script type="text/javascript" src="TV/ITunes.js" charset="utf-8"></script>
+	<script type="text/javascript" src="TV/TvShowParser.js" charset="utf-8"></script>
+	<script type="text/javascript" src="TvShow.js" charset="utf-8"></script>
+	<script type="text/javascript" src="tv.js" charset="utf-8"></script>
+
+    <style type="text/css">
+        @import "tv.css";
+    </style>
+
+</head>
+
+<body onload="load();">
+	
+	<div id="front">
+		<div id="title"></div>
+		<div id="header"></div>
+		<div id="info-button"></div>
+		<div id="refresh-button"></div>
+		<div id="loading-mini"></div>
+		<div id="forecast">
+			<div id="notice"></div>
+			    <ul id="forecast-inner"></ul>
+		    </div>
+		<div id="footer"></div> 
+	</div>
+	
+	<div id="back">
+		
+		<div id="forecast-limit-label">Limit forecast to
+			<select id="forecast-limit">
+				<option>1</option>
+				<option>5</option>
+				<option>10</option>
+				<option>15</option>
+				<option>20</option>	
+				<option>All</option>
+			</select>TV show(s)
+		</div>
+		
+		<div id="episode-display-type-label">Display episode
+			<select id="episode-display-type">
+				<option>Name</option>
+				<option>ID</option>
+			</select>
+		</div>
+		
+		<div id="include-tba">
+			<input type="checkbox" id="include-tba-cb" checked=""/>&nbsp;Include TV shows that are TBA
+		</div>
+
+		<div id="perform-tz-correction">
+			<input type="checkbox" id="perform-tz-correction-cb" checked=""/>&nbsp;Perform time zone correction
+		</div>
+
+		<div id="auto-refresh">
+       		<input type="checkbox" id="auto-refresh-cb" checked=""/>&nbsp;Refresh forecast automatically
+       	</div>
+				
+		<input type="search"
+			   value=""
+			   results="0"
+			   id="search-field"
+			   onkeypress="searchKeyPress(event);"/>
+		
+		<div id="search-button"></div>
+		
+		<div id="your-tv-shows-label">Your TV shows</div>
+		
+		<div id="your-tv-shows">
+			<ul id="your-tv-shows-inner">
+			</ul>
+		</div>
+
+		<div id="back-title"></div>
+		
+		<div id="version">Version 2.4.6</div>
+		
+		<div id="app-store"></div>
+		
+		<div id="remove-button"></div>
+		<div id="done-button"></div>
+	</div>
+</body>

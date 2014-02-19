@@ -1,0 +1,558 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica';
+}
+
+#front, #back
+{
+	width: 302px;
+}
+
+#front
+{
+}
+
+#back
+{
+	background-image: url(Images/back.png);
+	height: 367px;
+	display: none;
+}
+
+#header
+{
+    width: 302px;
+    height: 60px;
+    background-image: url(Images/header.png);
+}
+
+#footer, #footer-new-version
+{
+    margin: 0;
+    padding: 0;
+    width: 302px;
+    height: 34px;
+    position: relative;
+    top: -1px;
+}
+
+#footer
+{
+    background: url(Images/footer.png) top no-repeat;
+}
+
+#footer-new-version
+{
+    background: url(Images/footer-new-version.png) top no-repeat;
+    cursor: pointer;
+}
+
+#footer-new-version:hover
+{
+    background: url(Images/footer-new-version-hover.png) top no-repeat;
+}
+
+#title
+{
+    position: absolute;
+    width: 102px;
+    height: 27px;
+    left: 23px;
+    top: 22px;
+    cursor: pointer;
+}
+
+#back-title
+{
+    position: absolute;
+    width: 120px;
+    height: 11px;
+    left: 29px;
+    top: 316px;
+    cursor: pointer;
+}
+
+#info-button
+{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 257px;
+    top: 32px;
+    background-image: url(Images/info.png);
+    cursor: pointer;
+}
+
+#info-button:hover
+{
+    background-image: url(Images/info-hover.png);
+}
+
+#refresh-button
+{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 229px;
+    top: 31px;
+    background: url(Images/refresh.png);    
+    cursor: pointer;
+}
+
+#refresh-button:hover
+{
+    background: url(Images/refresh-hover.png);
+}
+
+#loading-mini
+{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 229px;
+    top: 31px;
+    background-image: url(Images/spinner-small.gif);
+}
+
+#forecast
+{
+    margin: 0;
+    padding-left: 12px;
+    background: url('Images/panel-shadow.png') repeat-y;
+    padding-right: 12px;
+}
+
+#notice
+{
+    background: url('Images/logo.png') top center no-repeat;
+    width: 276px;
+    margin: 0;
+    padding-top: 92px;
+    padding-bottom: 10px;
+    background-color: #10141A;
+
+    border-left: 1px solid #1E242E;
+    border-right: 1px solid #1E242E;
+
+    text-align: center;
+	font-size: 11px;
+	color: #9bc6ff;
+    text-shadow: #000 0 1px;
+    font-weight: bold;
+}
+
+#forecast-inner
+{
+	width: 100%;
+	background: #10141A;
+	padding: 0;
+	margin: 0;
+}
+
+#forecast-inner li
+{
+	padding-left: 8px;
+	list-style-type: none;
+	font-weight: normal;
+    color: #fff;
+    border-bottom: 1px solid #38495D;
+    border-left: 1px solid #1E242E;
+    border-right: 1px solid #1E242E;
+
+}
+
+.poster
+{
+    width: 68px;
+    height: 68px;
+    border: 1px solid #00f;
+}
+
+.even
+{
+    background: url(Images/even-li.png) top left repeat-x;
+	background-color: #10141A;    
+}
+
+.odd
+{
+    background: url(Images/odd-li.png) top left repeat-x;
+    background-color: #141A21;
+}
+
+#forecast-inner li h1,
+#forecast-inner li h2
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#forecast-inner li h1
+{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: #000 0 1px;
+}
+
+.itunes-link
+{
+	display:none;
+    float: left;
+    background: url('Images/buy.png');
+    width: 18px;
+    height: 9px;
+    margin-left: 3px;
+    margin-top: 5px;
+}
+
+.itunes-link:hover
+{
+    background: url('Images/buy-hover.png');
+    cursor: pointer;
+}
+
+#forecast-inner li h1 span
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline;
+    width: 165px;
+}
+
+#forecast-inner li h2
+{
+	font-size: 8pt;
+    font-weight: normal;
+    padding-bottom: 6px;
+    font-family: 'Helvetica';
+}
+
+#forecast-inner li h2 span
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;    
+    display: inline;    
+    width: 165px;
+}
+
+.link-hover
+{
+    cursor: pointer;
+		text-shadow: #0074E5 0px 0px 7px;
+		
+}
+
+#forecast-inner li:hover
+{
+    background: url(Images/li-hover.png) top left repeat-x;
+	background-color: #2a384c;
+}
+
+#forecast-inner li:hover .air-date,
+#forecast-inner li:hover .special
+{
+	color: #fff;
+}
+
+#forecast-inner li .air-date,
+#forecast-inner li .special
+{
+	padding-right: 8px;
+    float: right;
+	font-size: 11px;
+	color: #9bc6ff;
+	text-align: right;
+    text-shadow: #000 0 1px;
+    font-weight: bold;	
+}
+
+#forecast-inner li .air-date
+{
+    padding-top: 8px;
+    line-height: 1.1em;
+}
+
+#forecast-inner li .special
+{
+    padding-top: 14px;
+}
+
+#forecast-limit-label
+{
+  position: absolute;
+	left: 32px;
+	top: 28px;
+	height: 16px;	
+	color: #fff;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+#forecast-limit-label select
+{
+	width: 64px;
+}
+
+#episode-display-type-label
+{
+  position: absolute;
+	left: 32px;
+	top: 50px;
+	height: 16px;	
+	color: #fff;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+#episode-display-type-label select
+{
+	margin-left:8px;
+	width: 64px;
+}
+
+#version
+{
+    position: absolute;
+    left: 31px;
+    top: 300px;
+    height: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 8pt;
+    text-shadow: #000 0 1px;
+}
+
+#forecast-limit
+{
+    width: 60px;
+    margin: 0 5px;
+}
+
+#include-tba
+{
+    position: absolute;
+	left: 32px;
+	top: 76px;
+	height: 16px;	
+	color: #fff;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+#perform-tz-correction
+{
+    position: absolute;
+    left: 32px;
+    top: 98px;
+    height: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+#auto-refresh
+{
+    position: absolute;
+    left: 32px;
+    top: 120px;
+    height: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+#search-field
+{
+	position: absolute;
+	left: 32px;
+	top: 144px;
+	width: 164px;
+}
+
+#your-tv-shows-label
+{
+    position: absolute;
+	left: 32px;
+	top: 174px;
+	height: 16px;	
+	color: #fff;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+#your-tv-shows
+{
+    position: absolute;
+	top: 190px;
+	left: 32px;
+	width: 236px;	
+	height: 85px;
+	overflow: auto;
+	border-width: 1px;	
+	border-color: #848484;
+	border-style: solid;
+	font-size: 8pt;
+	font-family: 'Lucida Grande';
+}
+
+#continent-label
+{    
+    position: absolute;
+	left: 32px;
+    top: 283px;
+	height: 16px;	
+	color: #fff;
+	font-weight: bold;
+	font-size: 8pt;    
+}
+
+#continent-select
+{
+    position: absolute;
+    left: 32px;
+    top: 301px;
+    font-size: 8pt;
+    width: 114px;
+}
+
+.continent-dropdown
+{
+    width: 107px;
+    font-size: 10px;
+    margin: 2px 0 1px 0;
+}
+
+.city-dropdown
+{
+    width: 107px;
+    font-size: 10px;
+    margin: 2px 0 1px 3px;
+}
+
+#city-label
+{
+    position: absolute;
+	left: 155px;
+    top: 283px;
+	height: 16px;	
+	color: #fff;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+#city-select
+{
+    position: absolute;
+    left: 155px;
+    top: 301px;
+    font-size: 8pt;
+    width: 114px;
+}
+
+#your-tv-shows-inner
+{
+    width: 100%;
+	min-height: 85px;
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+.back-odd-li
+{
+    background-color: #E4EDFF;
+}
+
+#your-tv-shows-inner li
+{
+    margin: 0;
+    padding: 0;
+}
+
+.back-li-title
+{
+    padding: 2px;    
+}
+
+.timezone-button
+{
+    float: right;
+    margin-top: 4px;
+    margin-right: 3px;
+    height: 9px;
+    width: 65px;
+    background: url('Images/tz-button.png');
+}
+
+.timezone-button:hover
+{
+    background: url('Images/tz-button-hover.png');
+    cursor: pointer;
+}
+
+.timezone-button-set
+{
+    background: url('Images/tz-button-enabled.png');
+}
+
+.timezone-button-disabled
+{
+    background: url('Images/tz-button-disabled.png');    
+}
+
+.timezone-button-disabled:hover
+{
+    background: url('Images/tz-button-disabled.png');    
+}
+
+.selected-tv-show
+{
+    background: url('Images/selected-tv-show.png') top repeat-x;
+    background-color: #3C91E0;
+    color: #fff;
+}
+
+.timezone-dialog
+{
+    background-color: #1C4F9B;
+    padding: 0 2px 2px 2px;
+}
+
+/* Glass Buttons */
+#search-button, #remove-button, #done-button
+{
+    position: absolute;
+    left: 204px;
+}
+
+#search-button
+{
+    top: 144px;
+}
+
+#remove-button
+{
+    top: 287px;
+}
+
+#done-button
+{
+    top: 315px;
+}
+
+#app-store
+{
+    position: absolute;
+    left: 126px;
+    top: 327px;
+    margin: 0;
+    padding: 0;
+    width: 48px;
+    height: 13px;
+    cursor: pointer;
+}
