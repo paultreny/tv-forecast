@@ -9,7 +9,7 @@ function tvShowStatusToString(tv_show_status)
         case TvShowStatus.SeriesEnded: return "Series Ended";
         case TvShowStatus.Normal:      return "Normal";
     }
-    
+
     return null;
 }
 
@@ -19,18 +19,18 @@ var TvShowParser = Class.create();
 TvShowParser.prototype =
 {
 initialize: function(quickInfo)
-{    
+{
     var lines = quickInfo.split('\n');
-    
+
     this.quickInfo = [];
-    
+
     lines.each(function(line)
     {
         var components = line.split('@');
-        
+
         var key = components[0];
         var value = components[1];
-        
+
         if (key == "Show Name")
         {
             this.quickInfo.showName = value;
@@ -66,7 +66,7 @@ initialize: function(quickInfo)
         else if (key == "Latest Episode")
         {
             var episodeComponents = value.split('^');
-            
+
             this.quickInfo.latestEpisode = [];
             this.quickInfo.latestEpisode.episode = episodeComponents[0];
             this.quickInfo.latestEpisode.title = episodeComponents[1];
@@ -75,11 +75,11 @@ initialize: function(quickInfo)
         else if (key == "Next Episode")
         {
             var episodeComponents = value.split('^');
-            
+
             this.quickInfo.nextEpisode = [];
             this.quickInfo.nextEpisode.episode = episodeComponents[0];
             this.quickInfo.nextEpisode.title = episodeComponents[1];
-            this.quickInfo.nextEpisode.airDate = episodeComponents[2];            
+            this.quickInfo.nextEpisode.airDate = episodeComponents[2];
         }
         else if (key == "Episode URL")
         {
@@ -94,14 +94,14 @@ showTitle: function()
     return this.quickInfo.showName;
 },
 
-// The show status    
+// The show status
 showStatus: function()
-{   
+{
 	if (this.quickInfo.status == "Canceled/Ended")
 	{
 	    return TvShowStatus.SeriesEnded;
 	}
-    
+
     return TvShowStatus.Normal;
 },
 
@@ -112,7 +112,7 @@ episodeTitle: function()
     {
         return this.quickInfo.nextEpisode.title;
     }
-    
+
     return null;
 },
 
@@ -123,13 +123,13 @@ seasonNumber: function()
         var episodeId = this.quickInfo.nextEpisode.episode;
 
 				var seasonInfo = episodeId.split('x');
-				
+
 				if (seasonInfo.length == 2)
 				{
-						return parseInt(seasonInfo[0]);
+						return parseInt(seasonInfo[0], 10);
 				}
     }
-    
+
     return null;
 },
 
@@ -140,13 +140,13 @@ episodeNumber: function()
         var episodeId = this.quickInfo.nextEpisode.episode;
 
 				var seasonInfo = episodeId.split('x');
-				
+
 				if (seasonInfo.length == 2)
 				{
-						return parseInt(seasonInfo[1]);
+						return parseInt(seasonInfo[1], 10);
 				}
     }
-    
+
     return null;
 },
 
@@ -155,7 +155,7 @@ episodeNumber: function()
 showAirsNext: function()
 {
     this.quickInfo.includesTimeOfDay = false;
-    
+
     var date = new Date();
 
     if (!this.quickInfo.nextEpisode)
@@ -170,7 +170,7 @@ showAirsNext: function()
         var year = airDateMatch[3];
         var month = 0;
         var day = airDateMatch[2];
-        
+
         if (airDateMatch[1] == "Jan")
             month = 0;
         else if (airDateMatch[1] == "Feb")
@@ -195,7 +195,7 @@ showAirsNext: function()
             month = 10;
         else if (airDateMatch[1] == "Dec")
             month = 11;
-        
+
         date.setFullYear(year, month, day);
     }
     else
@@ -206,9 +206,9 @@ showAirsNext: function()
     if (this.quickInfo.airtime)
     {
        var airTimeComponents = this.quickInfo.airtime.split(' at ');
-       
+
        var airTime = '';
-       
+
        if (airTimeComponents.length == 1)
        {
            airTime = this.quickInfo.airTime;
@@ -217,24 +217,24 @@ showAirsNext: function()
        {
            airTime = airTimeComponents[1];
        }
-       
+
        var airTimeMatch = /(\d*?):(\d*?) (am|pm)/.exec(airTime);
-       
+
        if (airTimeMatch)
        {
            var hours = parseInt(airTimeMatch[1], 10);
            var minutes = parseInt(airTimeMatch[2], 10);
-           
+
            if (airTimeMatch[3] == 'pm')
            {
                hours += 12;
            }
-           
+
            date.setHours(hours);
            date.setMinutes(minutes);
            date.setSeconds(0);
            date.setMilliseconds(0);
-           
+
            this.quickInfo.includesTimeOfDay = true;
        }
     }
@@ -247,4 +247,4 @@ includesTimeOfDay: function()
 {
     return this.quickInfo.includesTimeOfDay;
 }
-}
+};

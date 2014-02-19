@@ -8,7 +8,7 @@ VersionChecker.prototype =
 // version:  Current version of the application
 // callback: Function called when a determination is made
 initialize: function(url, name, version, callback)
-{   
+{
     this.name     = name;
     this.version  = version;
     this.callback = callback;
@@ -32,7 +32,7 @@ initialize: function(url, name, version, callback)
 
 // Checks the response for a newer version of the application
 _checkVersion: function(version)
-{   
+{
     if (version.version != this.version)
     {
         this.callback(true, version.url);

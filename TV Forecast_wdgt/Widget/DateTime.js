@@ -260,39 +260,39 @@ function getTime(timezone)
     var tz_env_str = "/usr/bin/env TZ=";
     var date_str   = "/bin/date +'%B, %d %Y %H:%M:%S'";
     var time;
-   
+
     if (timezone)
     {
-        time = widget.system(tz_env_str + 
-                             timezone + 
-                             " " + 
-                             date_str, 
+        time = widget.system(tz_env_str +
+                             timezone +
+                             " " +
+                             date_str,
                              null).outputString;
     }
     else
     {
         time = widget.system(date_str, null).outputString;
     }
-    
+
     return Date.parse(time);
 }
 
-// Returns the time zone difference (in minutes) between any two zoneinfo 
+// Returns the time zone difference (in minutes) between any two zoneinfo
 // database entries. A blank parameter will be treated as your current timezone.
 function timezoneDifference(lhs, rhs)
-{   
+{
     lhs_time = getTime(lhs);
     rhs_time = getTime(rhs);
-    
+
     var difference = lhs_time - rhs_time;
-        
+
     // difference in minutes
     difference = difference / 1000 / 60;
-    
+
     // times will usually be the same but may sometimes vary but a second
     // so ceil the result to the nearest minute
     difference = Math.ceil(difference);
-    
+
     return difference;
 }
 
@@ -314,7 +314,7 @@ function monthToShortString(i)
         case 10: return "Nov";
         case 11: return "Dec";
     }
-    
+
     return null;
 }
 
@@ -341,7 +341,7 @@ function monthToString(i)
     switch (i)
     {
         case 0:  return "January";
-        case 1:  return "February";    
+        case 1:  return "February";
         case 2:  return "March";
         case 3:  return "April";
         case 4:  return "May";
@@ -353,7 +353,7 @@ function monthToString(i)
         case 10: return "November";
         case 11: return "December";
     }
-    
+
     return null;
 }
 
@@ -375,7 +375,7 @@ function stringToMonth(str)
         case "November":  return 10;
         case "December":  return 11;
     }
-    
+
     return null;
 }
 
@@ -383,8 +383,8 @@ function stringToMonth(str)
 function daysBetween(lhs, rhs)
 {
     var ms_in_day = 86400000;
-	
-    var lhs_midnight = 
+
+    var lhs_midnight =
         new Date(lhs.getYear(),
                  lhs.getMonth(),
                  lhs.getDate(),
@@ -392,7 +392,7 @@ function daysBetween(lhs, rhs)
                  0,
                  0);
 
-    var rhs_midnight = 
+    var rhs_midnight =
         new Date(rhs.getYear(),
                  rhs.getMonth(),
                  rhs.getDate(),
@@ -401,7 +401,7 @@ function daysBetween(lhs, rhs)
                  0);
 
 	var days = (rhs_midnight - lhs_midnight) / ms_in_day;
-	
+
 	return Math.round(days);
 }
 
@@ -409,15 +409,15 @@ function daysBetween(lhs, rhs)
 function dateToString(date)
 {
     var today = new Date();
-    
+
     formatted_date =
-        dayToShortString(date.getDay()) + ", " +     
+        dayToShortString(date.getDay()) + ", " +
         monthToShortString(date.getMonth()) + " " + date.getDate();
-    
+
     if (date.getFullYear() != new Date().getFullYear())
     {
         formatted_date += ", " + date.getFullYear();
     }
-	
+
 	return formatted_date;
 }

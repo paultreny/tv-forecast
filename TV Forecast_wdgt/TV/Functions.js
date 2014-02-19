@@ -8,7 +8,7 @@ function tvShowSearchUrl(text)
 function parseTvShowSearchResults(xml)
 {
     var results = new Array();
-    
+
     var child_nodes = xml.documentElement.childNodes;
 
     for (var i = 0; i < child_nodes.length; ++i)
@@ -17,10 +17,10 @@ function parseTvShowSearchResults(xml)
 	    {
 	        var name = findChild(child_nodes[i], 'name').firstChild.data;
 	        var url = findChild(child_nodes[i], 'link').firstChild.data;
-            
+
             var yearEndedChild = findChild(child_nodes[i], 'ended');
             var status = findChild(child_nodes[i], 'status').firstChild.data;
-                        
+
             if (yearEndedChild != null && status != "Canceled/Ended")
             {
                 results.push({
@@ -30,8 +30,8 @@ function parseTvShowSearchResults(xml)
             }
         }
     }
-    
+
     var too_many_results = false;
-    
+
     return { results: results, too_many_results: too_many_results };
 }

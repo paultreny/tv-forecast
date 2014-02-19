@@ -10,7 +10,7 @@ initialize: function(url, title, continent, city)
     this.quickInfoUrl = "http://services.tvrage.com/tools/quickinfo.php?show=" + encodeURIComponent(title) + '&exact=1';
     this.url                 = url;
     this.title               = title;
-    this.front_id            = 'front-' + title; 
+    this.front_id            = 'front-' + title;
     this.back_id             = 'back-'  + title;
 	this.special             = "";
     this.destructed          = false;
@@ -22,16 +22,16 @@ initialize: function(url, title, continent, city)
 
     if (continent != null)
     {
-        this.continent = parseInt(continent);
+        this.continent = parseInt(continent, 10);
     }
-    
+
     if (city != null)
     {
-        this.city = parseInt(city);
+        this.city = parseInt(city, 10);
     }
-    
+
     this.refreshTimezoneOffset();
-    
+
     var back_ul = $('your-tv-shows-inner');
 
     var title = this.title;
@@ -40,27 +40,27 @@ initialize: function(url, title, continent, city)
     {
         title = title.substr(0, 24).replace(/\s*$/, '') + '...';
     }
-    
+
     // make the back list item
     var back_li = document.createElement("li");
     back_li.id = this.back_id;
-    
+
     // add a timezone button to the back list item
     var back_li_tz_button = document.createElement("div");
     back_li_tz_button.id = this.back_id + '-tz-button';
     Element.addClassName(back_li_tz_button, 'timezone-button');
     back_li.appendChild(back_li_tz_button);
-    
+
     // add the tv show title to the back list item
     var back_li_title = document.createElement("div");
     back_li_title.innerText = title;
     Element.addClassName(back_li_title, 'back-li-title');
     back_li.appendChild(back_li_title);
     back_ul.appendChild(back_li);
-    
+
     Event.observe(this.back_id + '-tz-button', 'click', this.eventTzClicked.bind(this));
     Event.observe(this.back_id, 'click', this.eventClicked.bind(this));
-    
+
     this.refreshTimezoneButton();
 },
 
@@ -70,34 +70,34 @@ adjustForTimezone: function(state)
 },
 
 refresh: function()
-{    
-    this.ajax_request = 
+{
+    this.ajax_request =
         new AjaxRequest(this.quickInfoUrl, this.processQuickInfo.bind(this));
-    
+
     schedulePending();
 },
 
 destruct: function()
-{	
+{
     var front = $(this.front_id);
     var back  = $(this.back_id);
-    
+
     if (front)
     {
         Element.remove(front);
     }
-    
+
     if (this.ajax_request)
     {
         this.ajax_request.abort();
         this.ajax_request = null;
-        
+
         // signal that the TvShow has arrived - despite being aborted
         scheduleReady();
     }
-    
+
     Element.remove(back);
-    
+
     this.destructed = true;
 },
 
@@ -130,7 +130,7 @@ setSelected: function(state)
     else if (this.getSelected())
     {
         Element.removeClassName(this.back_id, 'selected-tv-show');
-        
+
         // close the timezone dialog if it is open
         if ($(this.back_id + '-timezone') != null)
         {
@@ -145,23 +145,23 @@ refreshTimezoneButton: function()
     var disabled_class_name = 'timezone-button-disabled';
     var class_name          = 'timezone-button-set';
     var id                  = this.back_id + '-tz-button';
-    
+
     if (this.adjust_for_timezone)
     {
         if (Element.hasClassName(id, disabled_class_name))
-        { 
+        {
             Element.removeClassName(id, disabled_class_name);
         }
     }
     else
-    {        
+    {
         if (!Element.hasClassName(id, disabled_class_name))
         {
             Element.addClassName(id, disabled_class_name);
             return;
         }
     }
-    
+
     if (this.continent != DEFAULT_CONTINENT || this.city != DEFAULT_CITY)
     {
         if (!Element.hasClassName(id, class_name))
@@ -177,7 +177,7 @@ refreshTimezoneButton: function()
 
 toXml: function()
 {
-    return '<subscription>' + 
+    return '<subscription>' +
 	       '<title>' + encodeURIComponent(this.title) + '</title>' +
 		   '<url>' + this.url + '</url>' +
 		   '<continent>' + this.continent + '</continent>' +
@@ -188,7 +188,7 @@ toXml: function()
 eventTzClicked: function()
 {
     var tz_id = this.back_id + '-timezone';
-        
+
     if ($(tz_id) != null)
     {
         this.refreshTimezoneButton();
@@ -200,34 +200,34 @@ eventTzClicked: function()
     {
         return;
     }
-    
+
     var li = $(this.back_id);
-    
+
     var timezone = document.createElement('div');
     timezone.id = tz_id;
-    
+
     Element.addClassName(timezone, 'timezone-dialog');
-    
+
     var continent_select = document.createElement('select');
     var city_select      = document.createElement('select');
-    
+
     populateContinents(continent_select);
     populateCities(city_select, continents[this.continent].cities);
-    
+
     continent_select.selectedIndex = this.continent;
     city_select.selectedIndex      = this.city;
-    
+
     continent_select.id = this.back_id + '-continent-select';
     city_select.id      = this.back_id + '-city-select';
-    
+
     Element.addClassName(continent_select, 'continent-dropdown');
     Element.addClassName(city_select,      'city-dropdown');
-        
+
     timezone.appendChild(continent_select);
     timezone.appendChild(city_select);
-    
+
     li.appendChild(timezone);
-    
+
     Event.observe(continent_select, 'click', function()
     {
         if (this.continent != continent_select.selectedIndex)
@@ -238,18 +238,18 @@ eventTzClicked: function()
 
             this.continent = continent_select.selectedIndex;
             this.city      = city_select.selectedIndex;
-            
+
             this.refreshTimezoneOffset();
             this.refreshTimezoneButton();
         }
     }.bind(this));
-    
+
     Event.observe(city_select, 'click', function()
     {
-        this.city = city_select.selectedIndex;      
-        
+        this.city = city_select.selectedIndex;
+
         this.refreshTimezoneOffset();
-        this.refreshTimezoneButton();        
+        this.refreshTimezoneButton();
     }.bind(this));
 },
 
@@ -259,27 +259,27 @@ eventClicked: function()
     {
         return;
     }
-    
+
     your_tv_shows.each(function(your_tv_show)
     {
         your_tv_show.setSelected(false);
     })
-    
+
     this.setSelected(true);
-    
+
 	remove_button.setEnabled(true);
 },
 
 processQuickInfo: function(quickInfo)
 {
     this.ajax_request = null;
-    
+
     if (this.destructed)
     {
         // destruct will call scheduleReady - no need to do it here
         return;
     }
-    
+
     if (quickInfo == "")
     {
         // no data
@@ -288,19 +288,19 @@ processQuickInfo: function(quickInfo)
     }
 
     var tv_show_summary = new TvShowParser(quickInfo);
-        
+
     if (tv_show_summary.showAirsNext() == null)
     {
         if (tv_show_summary.showStatus() != TvShowStatus.Normal)
         {
-            this.special = 
+            this.special =
                 tvShowStatusToString(tv_show_summary.showStatus());
         }
         else
         {
             this.special = "TBA";
         }
-        
+
         this.episode       = "TBA";
 				this.episode_id 	 = "TBA";
         this.episode_url   = "";
@@ -314,7 +314,7 @@ processQuickInfo: function(quickInfo)
         this.season_number = tv_show_summary.seasonNumber();
         this.episode_number = tv_show_summary.episodeNumber();
         this.date        = tv_show_summary.showAirsNext().getTime();
-        
+
         if (tv_show_summary.includesTimeOfDay())
         {
             this.time_is_known = true;
@@ -324,9 +324,9 @@ processQuickInfo: function(quickInfo)
             this.time_is_known = false;
         }
 	}
-    
+
     this.itunes_id = shows[tv_show_summary.showTitle()];
-    	
+
 	scheduleReady();
 },
 
@@ -338,17 +338,17 @@ refreshTimezoneOffset: function()
 },
 
 renderFront: function(odd)
-{    
+{
 	if (this.episode == null)
 	{
 		// no net connection
 		return;
 	}
-	
+
     var front_ul = $('forecast-inner');
 
 	var date = "";
-	
+
 	if (this.date)
 	{
 		date = formatDate(this);
@@ -366,7 +366,7 @@ renderFront: function(odd)
     if (this.date != "")
     {
 		days = this.getDays();
-		
+
 		if (days == -1)
 		{
 			days = "Yesterday";
@@ -388,9 +388,9 @@ renderFront: function(odd)
 			days = days + " days";
 		}
     }
-    
+
     var inner_div = "";
-    
+
     if (this.special == "")
     {
         inner_div = '<div class="air-date">' + date + '<br/>' + days + '</div>';
@@ -399,12 +399,12 @@ renderFront: function(odd)
     {
         inner_div = '<div class="special">' + this.special + '</div>';
     }
-    
+
     var tv_show_id = this.front_id + '-tv-show';
     var episode_id = this.front_id + '-episode-id';
-    
+
     var li_tag = "";
-    
+
     if (odd)
     {
         li_tag = '<li id="' + this.front_id + '" class="odd">';
@@ -415,9 +415,9 @@ renderFront: function(odd)
     }
 
 		var episodeText = null;
-		
+
 		if ($('episode-display-type').value == "ID")
-		{		
+		{
 			if (this.season_number && this.episode_number)
 			{
 				episodeText = 'Season ' + this.season_number + ', Episode ' + this.episode_number;
@@ -425,7 +425,7 @@ renderFront: function(odd)
 			else
 			{
 				episodeText = 'TBA';
-			}			
+			}
 		}
 		else
 		{
@@ -440,24 +440,24 @@ renderFront: function(odd)
 			'<h2 style="clear: left;"><span style="float:left;" id="' + episode_id + '">' + episodeText + '</span></h2>' +
             '<div style="clear:left;padding-bottom:6px;"></div>' +
         '</li>');
-    
+
     if (this.title_url != "")
     {
         Event.observe(
             $(tv_show_id),
             'click',
             function() { widget.openURL(this.url); }.bind(this));
-        
+
         Event.observe(
             $(tv_show_id),
             'mouseover',
             function() { Element.addClassName($(tv_show_id), 'link-hover'); });
-            
+
         Event.observe(
             $(tv_show_id),
             'mouseout',
             function() { Element.removeClassName($(tv_show_id), 'link-hover'); });
-    }    
+    }
 },
 
 getDate: function()
@@ -466,28 +466,28 @@ getDate: function()
 	{
         return this.date;
 	}
-    
+
     var date = new Date();
-    
+
     if (this.adjust_for_timezone)
     {
-        date.setTime(this.date + (this.timezone_offset * 60 * 1000));        
+        date.setTime(this.date + (this.timezone_offset * 60 * 1000));
     }
     else
     {
         date.setTime(this.date);
     }
-    
+
     return date;
 },
 
 getDays: function()
-{    
+{
 	if (this.date == "")
 	{
 		return "Unknown";
 	}
-		
+
     return daysBetween(new Date(), this.getDate());
 }
 }

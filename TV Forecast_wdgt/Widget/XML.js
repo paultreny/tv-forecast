@@ -2,7 +2,7 @@
 function findChild(element, tag_name)
 {
 	var child;
-	
+
 	for (child = element.firstChild; child != null; child = child.nextSibling)
 	{
 		if (child.tagName == tag_name)
@@ -10,7 +10,7 @@ function findChild(element, tag_name)
 			return child;
 		}
 	}
-	
+
 	return null;
 }
 
@@ -21,13 +21,13 @@ function firstChildData(element)
     {
         return null;
     }
-    
+
     var firstChild = element.firstChild;
-    
+
     if (firstChild)
     {
         return firstChild.data;
     }
-    
+
     return null;
 }
