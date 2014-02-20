@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="Styles/Main.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="Styles/Main@2x.css" type="text/css" media="only screen and (-webkit-min-device-pixel-ratio:2)">
+	<link rel="stylesheet" href="Styles/Services.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="Styles/Services@2x.css" type="text/css" media="only screen and (-webkit-min-device-pixel-ratio:2)">
+	<link rel="stylesheet" href="Adjustments.css" type="text/css" media="screen">
+
+	<script type="text/javascript" src="Scripts/Common.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Strings.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Strings-More.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Scripts/Resize.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Scripts/Buttons.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Scripts/Difflib.js" charset="utf-8"></script>
+	<script type="text/javascript" src="Scripts/Main.js" charset="utf-8"></script>
+
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleScrollbar.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleScrollArea.js" charset="utf-8"></script>
+</head>
+<body onload="setup()">
+
+	<img src="Default.png" id="loading">
+
+	<div id="unsupported"></div>
+
+	<div id="front">
+
+		<div id="scroll">
+			<div id="no-deliveries" onclick="updateDeliveries(1,false)"></div>
+			<div id="deliveries"></div>
+		</div>
+		<div id="scrollbar"></div>
+
+		<div class="top-left"></div>
+		<div class="top"></div>
+		<div class="top-right"></div>
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="bottom-left"></div>
+		<div class="bottom"></div>
+		<div class="bottom-right"></div>
+		<a id="message" href="javascript:updateDeliveries(1,false)"></a>
+		<a id="info" onclick="showInfo('general')"></a>
+		<a id="add" onclick="addDelivery()"></a>
+		<div id="resizer-front"></div>
+
+		<div id="updatebox">
+			<a href="http://junecloud.com/" onclick="return openSite(this.href)" id="getupdate">&nbsp;</a>
+			<div id="dismissupdate" onclick="dismissUpdate()"></div>
+		</div>
+
+	</div>
+
+	<div id="back">
+
+		<div id="edit">
+		<form onsubmit="saveSettings(true);return false;">
+
+			<label id="editlabel" for="from"></label>
+
+			<div id="nameField">
+				<label id="namelabel" for="name"></label>
+				<input id="name" type="text">
+			</div>
+
+			<div id="noField">
+				<label id="nolabel" for="no"></label>
+				<input id="no" type="text" onkeyup="selectGuessFrom(event,this.value)">
+			</div>
+
+			<div id="fromField">
+				<label id="fromlabel" for="from"></label>
+				<div id="from-popup" class="popup">
+					<div class="text" id="from-text"></div>
+					<select id="from" onkeyup="if(event.keyCode!=9)selectFrom(this.value,true)" onchange="selectFrom(this.value,true)"></select>
+					<a href="#" id="fav" onclick="toggleFavorite()"></a>
+				</div>
+			</div>
+
+			<div id="extraField">
+				<label id="extralabel" for="extra"></label>
+				<input id="extra" type="text" onchange="editedExtra()">
+			</div>
+
+			<div id="passwordField">
+				<label id="passwordlabel" for="password"></label>
+				<input id="password" type="password" onkeypress="editedPassword()">
+			</div>
+
+			<div id="dateField">
+				<label id="datelabel" for="month"></label>
+				<div id="dateselects"></div>
+			</div>
+
+			<div id="historyField">
+				<label id="historylabel" for="history"></label>
+				<div id="history-popup" class="popup">
+					<div class="text" id="history-text"></div>
+					<select id="history" onkeyup="if(event.keyCode!=9)loadHistory(this.value)" onchange="loadHistory(this.value)">
+						<option></option>
+					</select>
+				</div>
+			</div>
+
+			<div id="delivery-info"></div>
+			<input type="submit" class="submit">
+
+		</form>
+		</div>
+
+		<div id="tabs" class="tabs">
+			<div id="general-tab" class="tab" onclick="selectTab('general')"></div>
+			<div id="sync-tab" class="tab" onclick="setSync('login')"></div>
+			<div id="donate-tab" class="tab" onclick="selectTab('donate')"></div>
+		</div>
+
+		<div id="general">
+
+			<div id="sortByField">
+				<label id="sortbylabel" for="sortby">Sort By</label>
+				<div id="sortby-popup" class="popup">
+					<div class="text" id="sortby-text"></div>
+					<select id="sortby" onkeyup="if(event.keyCode!=9)selectSortBy(true)" onchange="selectSortBy(true)">
+						<option value="0">Manually</option>
+						<option value="1">Delivery Date</option>
+						<option value="2">Last Updated</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="notificationsField">
+				<label id="notificationslabel" for="notifications">Notifications</label>
+				<div id="notifications-popup" class="popup">
+					<div class="text" id="notifications-text"></div>
+					<select id="notifications" onkeyup="if(event.keyCode!=9)selectNotifications(true)" onchange="selectNotifications(true)"></select>
+				</div>
+			</div>
+
+			<div id="sizeField">
+				<input id="size" type="checkbox">
+				<label id="sizelabel" for="size"></label>
+			</div>
+
+			<div id="about">
+				<div id="junecloud"><a href="http://junecloud.com/sync/about/delivery-status-widget.html"
+					onclick="return openSite(this.href)">Junecloud</a>
+				</div>
+				<div><a onclick="resetDefinitions();checkVersionNow();saveSettings(true);updateDeliveries(2,false);" id="version"></a></div>
+			</div>
+
+		</div>
+
+		<div id="sync">
+
+			<div class="segmented">
+				<div id="signin-segment" class="segment" onclick="setSync('login')"></div>
+				<div id="register-segment" class="segment" onclick="setSync('register')"></div>
+			</div>
+
+			<form onsubmit="saveSync();return false;">
+			<input id="cmd" type="hidden" value="login">
+
+				<div id="syncEmailField">
+					<label id="syncemaillabel" for="syncemail"></label>
+					<input id="syncemail" type="text" onchange="changedSyncEmail()">
+				</div>
+				<div id="syncPasswordField">
+					<label id="syncpasswordlabel" for="syncpassword"></label>
+					<input id="syncpassword" type="password">
+				</div>
+				<div id="syncConfirmField">
+					<label id="syncconfirmlabel" for="syncconfirm"></label>
+					<input id="syncconfirm" type="password">
+				</div>
+				<div id="syncNameField">
+					<label id="syncnamelabel" for="syncname"></label>
+					<input id="syncname" type="text">
+				</div>
+				<div id="syncTermsField">
+					<input id="syncterms" type="checkbox">
+					<label id="synctermslabel" for="syncterms"></label>
+				</div>
+
+				<div id="signin-button"></div>
+				<div id="register-button"></div>
+				<div id="forgot"></div>
+				<input type="submit" class="submit">
+
+			</form>
+
+			<div id="login-type"></div>
+			<div id="login-info"></div>
+			<div id="logout-button"></div>
+
+			<div id="sync-info"></div>
+
+		</div>
+
+		<div id="donate">
+
+			<div id="donate-info"></div>
+			<div id="donate-button"></div>
+			<div id="donatedField">
+				<input id="alreadydonated" type="checkbox" onchange="setDonated(false)">
+				<label id="alreadydonatedlabel" for="alreadydonated"></label>
+			</div>
+
+		</div>
+
+		<div id="back-buttons">
+			<div id="done-button"></div>
+			<div id="cancel-button"></div>
+		</div>
+		<div id="help">
+			<a href="http://junecloud.com/sync/help/delivery-status-widget/"
+				onclick="return openSite(this.href)" id="helplink"></a>
+		</div>
+
+		<div class="top-left"></div>
+		<div class="top"></div>
+		<div class="top-right"></div>
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="bottom-left"></div>
+		<div class="bottom"></div>
+		<div class="bottom-right"></div>
+		<div id="resizer-back"></div>
+
+	</div>
+
+</body>
+</html>

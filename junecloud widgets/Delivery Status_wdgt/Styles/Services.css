@@ -1,0 +1,598 @@
+/* For background from color, add to r:31, g:36, :b26 */
+
+/* Adobe */
+
+.Adobe.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+}
+.Adobe a:link, .Adobe a:visited, .Adobe a:hover, .Adobe a:active {
+	color:				#ed1b2e;
+}
+.Adobe .days, .Adobe .item {
+	color:				#ed1b2e;
+}
+.Adobe .ship, .Adobe .deliver {
+	opacity:			0.8;
+}
+
+/* Amazon */
+
+.Amazon.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffd5), to(#e5e5bc));
+}
+.Amazon a:link, .Amazon a:visited, .Amazon a:hover, .Amazon a:active {
+	color:				#cc6600;
+}
+.Amazon .days, .Amazon .item {
+	color:				#cc6600;
+}
+.Amazon .ship, .Amazon .deliver {
+	opacity:			0.8;
+}
+
+/* Apple */
+
+.Apple.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#b2b9a7), to(#93958d));
+}
+.Apple a:link, .Apple a:visited, .Apple a:hover, .Apple a:active {
+	color:				#000000;
+}
+.Apple .days, .Apple .item {
+	color:				#000000;
+}
+.Apple .ship, .Apple .deliver {
+	opacity:			0.6;
+}
+
+/* Aramex */
+
+.Aramex.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#eb3f2e), to(#cc1b14));
+	color:				#ffffff;
+}
+.Aramex a:link, .Aramex a:visited, .Aramex a:hover, .Aramex a:active {
+	color:				#ffffff;
+}
+.Aramex .days, .Aramex .item {
+	color:				#ffffff;
+}
+.Aramex .ship, .Aramex .deliver {
+	opacity:			0.8;
+}
+
+/* Australia Post */
+
+.AusPost.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ff371a), to(#e41300));
+	color:				#ffffff;
+}
+.AusPost a:link, .AusPost a:visited, .AusPost a:hover, .AusPost a:active {
+	color:				#ffffff;
+}
+.AusPost .days, .AusPost .item {
+	color:				#ffffff;
+}
+.AusPost .ship, .AusPost .deliver {
+	opacity:			0.8;
+}
+
+/* Canada Post */
+
+.CanadaPost.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#2b5394), to(#0c2f7a));
+	color:				#ffffff;
+}
+.CanadaPost a:link, .CanadaPost a:visited, .CanadaPost a:hover, .CanadaPost a:active {
+	color:				#fa0001;
+}
+.CanadaPost .days, .CanadaPost .item {
+	color:				#fa0001;
+}
+.CanadaPost .ship, .CanadaPost .deliver {
+	opacity:			0.8;
+}
+.CanadaPost .icon.error {
+	background:			url("../Images/Icons/error-CanadaPost.png") no-repeat;
+}
+.CanadaPost .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-CanadaPost.png") no-repeat;
+}
+
+/* Chronopost */
+
+.Chronopost.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+	color:				#2c2b2b;
+}
+.Chronopost a:link, .Chronopost a:visited, .Chronopost a:hover, .Chronopost a:active {
+	color:				#06539c;
+}
+.Chronopost .days, .Chronopost .item {
+	color:				#06539c;
+}
+	
+/* City Link */
+
+.CityLink.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffff34), to(#f0de1a));
+}
+.CityLink a:link, .CityLink a:visited, .CityLink a:hover, .CityLink a:active {
+	color:				#175433;
+}
+.CityLink .days, .CityLink .item {
+	color:				#175433;
+}
+.CityLink .ship, .CityLink .deliver {
+	opacity:			0.8;
+}
+
+/* DHL */
+
+.DHL.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffeb1b), to(#ffc701));
+}
+.DHL a:link, .DHL a:visited, .DHL a:hover, .DHL a:active {
+	color:				#cc0000;
+}
+.DHL .days, .DHL .item {
+	color:				#cc0000;
+}
+.DHL .ship, .DHL .deliver {
+	opacity:			0.8;
+}
+.DHL .icon.error {
+	background:			url("../Images/Icons/error-DHL.png") no-repeat;
+}
+.DHL .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-DHL.png") no-repeat;
+}
+
+/* DPD */
+
+.DPD.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+}
+.DPD a:link, .DPD a:visited, .DPD a:hover, .DPD a:active {
+	color:				#e61820;
+}
+.DPD .days, .DPD .item {
+	color:				#e61820;
+}
+.DPD .ship, .DPD .deliver {
+	opacity:			0.8;
+}
+
+/* FedEx */
+
+.FedEx.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#8239a4), to(#63158a));
+	color:				#ffffff;
+}
+.FedEx a:link, .FedEx a:visited, .FedEx a:hover, .FedEx a:active {
+	color:				#ffffff;
+}
+.FedEx .days, .FedEx .item {
+	color:				#ffffff;
+}
+.FedEx .ship, .FedEx .deliver {
+	opacity:			0.8;
+}
+
+/* GLS */
+
+.GLS.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#2f3092), to(#100c78));
+	color:				#ffffff;
+}
+.GLS a:link, .GLS a:visited, .GLS a:hover, .GLS a:active {
+	color:				#f7b500;
+}
+.GLS .days, .GLS .item {
+	color:				#f7b500;
+}
+.GLS .ship, .GLS .deliver {
+	opacity:			0.8;
+}
+
+/* Google */
+
+.Google.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#1f65cb), to(#0041b1));
+	color:				#ffffff;
+}
+.Google a:link, .Google a:visited, .Google a:hover, .Google a:active {
+	color:				#80d7ff;
+}
+.Google .days, .Google .item {
+	color:				#80d7ff;
+}
+
+/* HLG */
+
+.HLG.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#daffff), to(#bbe9ff));
+	color:				#3e3e40;
+}
+.HLG a:link, .HLG a:visited, .HLG a:hover, .HLG a:active {
+	color:				#0580cd;
+}
+.HLG .days, .HLG .item {
+	color:				#0580cd;
+}
+
+/* Hongkong Post */
+
+.HongkongPost.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#1fb88a), to(#009470));
+	color:				#ffffff;
+}
+.HongkongPost a:link, .HongkongPost a:visited, .HongkongPost a:hover, .HongkongPost a:active {
+	color:				#2d347a;
+}
+.HongkongPost .days, .HongkongPost .item {
+	color:				#2d347a;
+}
+.HongkongPost .ship, .HongkongPost .deliver {
+	opacity:			0.8;
+}
+.HongkongPost .icon.error {
+	background:			url("../Images/Icons/error-HongkongPost.png") no-repeat;
+}
+.HongkongPost .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-HongkongPost.png") no-repeat;
+}
+
+/* JapanPost */
+
+.JapanPost.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#eb3f2e), to(#cc1b14));
+}
+.JapanPost a:link, .JapanPost a:visited, .JapanPost a:hover, .JapanPost a:active {
+	color:				#ffffff;
+}
+.JapanPost .days, .JapanPost .item {
+	color:				#ffffff;
+}
+.JapanPost .ship, .JapanPost .deliver {
+	opacity:			0.8;
+}
+
+/* LaPoste */
+
+.LaPoste.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffff40), to(#ffec26));
+	color:				#0e2f97;
+}
+.LaPoste a:link, .LaPoste a:visited, .LaPoste a:hover, .LaPoste a:active {
+	color:				#0e2f97;
+}
+.LaPoste .days, .LaPoste .item {
+	color:				#0e2f97;
+}
+.LaPoste .ship, .LaPoste .deliver {
+	opacity:			0.85;
+}
+.LaPoste .icon.error {
+	background:			url("../Images/Icons/error-LaPoste.png") no-repeat;
+}
+.LaPoste .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-LaPoste.png") no-repeat;
+}
+
+/* LaserShip */
+
+.LaserShip.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+	color:				#2c2b2b;
+}
+.LaserShip a:link, .LaserShip a:visited, .LaserShip a:hover, .LaserShip a:active {
+	color:				#ed1c24;
+}
+.LaserShip .days, .LaserShip .item {
+	color:				#ed1c24;
+}
+
+/* OnTrac */
+
+.OnTrac.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#1f4e82), to(#002a68));
+	color:				#ffffff;
+}
+.OnTrac a:link, .OnTrac a:visited, .OnTrac a:hover, .OnTrac a:active {
+	color:				#ffd204;
+}
+.OnTrac .days, .OnTrac .item {
+	color:				#ffd204;
+}
+.OnTrac .ship, .OnTrac .deliver {
+	opacity:			0.8;
+}
+
+/* Parcelforce */
+
+.Parcelforce.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#eb2b1a), to(#cc0700));
+}
+.Parcelforce a:link, .Parcelforce a:visited, .Parcelforce a:hover, .Parcelforce a:active {
+	color:				#ffffff;
+}
+.Parcelforce .days, .Parcelforce .item {
+	color:				#ffffff;
+}
+.Parcelforce .ship, .Parcelforce .deliver {
+	opacity:			0.8;
+}
+
+/* Post.at */
+
+.Post-at.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffff1a), to(#f7e400));
+	color:				#000000;
+}
+.Post-at a:link, .Post-at a:visited, .Post-at a:hover, .Post-at a:active {
+	color:				#000000;
+}
+.Post-at .days, .Post-at .item {
+	color:				#000000;
+}
+.Post-at .ship, .Post-at .deliver {
+	opacity:			0.8;
+}
+
+/* Post Danmark */
+
+.PostDanmark.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#eb241b), to(#cc0001));
+	color:				#ffffff;
+}
+.PostDanmark a:link, .PostDanmark a:visited, .PostDanmark a:hover, .PostDanmark a:active {
+	color:				#ffffff;
+}
+.PostDanmark .days, .PostDanmark .item {
+	color:				#ffffff;
+}
+.PostDanmark .ship, .PostDanmark .deliver {
+	opacity:			0.8;
+}
+
+/* Poste.it */
+
+.Poste-it.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffff00), to(#ebf700));
+	color:				#3338b2;
+}
+.Poste-it a:link, .Poste-it a:visited, .Poste-it a:hover, .Poste-it a:active {
+	color:				#3338b2;
+}
+.Poste-it .days, .Poste-it .item {
+	color:				#3338b2;
+}
+
+/* Posten.no */
+
+.Posten-no.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+	color:				#4d4f53;
+}
+.Posten-no a:link, .Posten-no a:visited, .Posten-no a:hover, .Posten-no a:active {
+	color:				#ed1c24;
+}
+.Posten-no .days, .Posten-no .item {
+	color:				#ed1c24;
+}
+.Posten-no .icon.error {
+	background:			url("../Images/Icons/error-CanadaPost.png") no-repeat;
+}
+.Posten-no .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-CanadaPost.png") no-repeat;
+}
+
+/* Posten.se */
+
+.Posten-se.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+	color:				#031f50;
+}
+.Posten-se a:link, .Posten-se a:visited, .Posten-se a:hover, .Posten-se a:active {
+	color:				#4f89d7;
+}
+.Posten-se .days, .Posten-se .item {
+	color:				#4f89d7;
+}
+.Posten-se .ship, .Posten-se .deliver {
+	opacity:			0.8;
+}
+
+/* PostNL */
+
+.PostNL.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ff9320), to(#ee6f06));
+}
+.PostNL a:link, .PostNL a:visited, .PostNL a:hover, .PostNL a:active {
+	color:				#ffffff;
+}
+.PostNL .days, .PostNL .item {
+	color:				#ffffff;
+}
+.PostNL .ship, .PostNL .deliver {
+	color:				#2d347a;
+}
+.PostNL .icon.error {
+	background:			url("../Images/Icons/error-HongkongPost.png") no-repeat;
+}
+.PostNL .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-HongkongPost.png") no-repeat;
+}
+
+/* Purolator */
+
+.Purolator.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffe1), to(#f2ecc7));
+}
+.Purolator a:link, .Purolator a:visited, .Purolator a:hover, .Purolator a:active {
+	color:				#e9181e;
+}
+.Purolator .days, .Purolator .item {
+	color:				#e9181e;
+}
+.Purolator .ship, .Purolator .deliver {
+	opacity:			0.8;
+}
+.Purolator .icon.error {
+	background:			url("../Images/Icons/error-DHL.png") no-repeat;
+}
+.Purolator .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-DHL.png") no-repeat;
+}
+
+/* Royal Mail */
+
+.RoyalMail.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#eb3f2e), to(#cc1b14));
+	color:				#ffffff;
+}
+.RoyalMail a:link, .RoyalMail a:visited, .RoyalMail a:hover, .RoyalMail a:active {
+	color:				#ffdd00;
+}
+.RoyalMail .days, .RoyalMail .item {
+	color:				#ffdd00;
+}
+
+/* Sagawa */
+
+.Sagawa.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+}
+.Sagawa a:link, .Sagawa a:visited, .Sagawa a:hover, .Sagawa a:active {
+	color:				#41538e;
+}
+.Sagawa .days, .Sagawa .item {
+	color:				#41538e;
+}
+.Sagawa .ship, .Sagawa .deliver {
+	opacity:			0.8;
+}
+
+/* Swiss Post */
+
+.SwissPost.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#fff01a), to(#ffcc00));
+}
+.SwissPost a:link, .SwissPost a:visited, .SwissPost a:hover, .SwissPost a:active {
+	color:				#e50202;
+}
+.SwissPost .days, .SwissPost .item {
+	color:				#e50202;
+}
+.SwissPost .ship, .SwissPost .deliver {
+	opacity:			0.8;
+}
+.SwissPost .icon.error {
+	background:			url("../Images/Icons/error-CanadaPost.png") no-repeat;
+}
+.SwissPost .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-CanadaPost.png") no-repeat;
+}
+
+/* TNT */
+
+.TNT.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ff8a1a), to(#ff6600));
+}
+.TNT a:link, .TNT a:visited, .TNT a:hover, .TNT a:active {
+	color:				#ffffff;
+}
+.TNT .days, .TNT .item {
+	color:				#ffffff;
+}
+.TNT .ship, .TNT .deliver {
+	opacity:			0.8;
+}
+
+/* UPS */
+
+.UPS.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#78611e), to(#593d04));
+	color:				#f9d066;
+}
+.UPS a:link, .UPS a:visited, .UPS a:hover, .UPS a:active {
+	color:				#f9d066;
+}
+.UPS .days, .UPS .item {
+	color:				#f9d066;
+}
+.UPS .ship, .UPS .deliver {
+	opacity:			0.8;
+}
+.UPS .icon.error {
+	background:			url("../Images/Icons/error-UPS.png") no-repeat;
+}
+.UPS .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-UPS.png") no-repeat;
+}
+
+/* USPS */
+
+.USPS.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ffffef), to(#e0ded5));
+	color:				#2c2b2b;
+}
+.USPS a:link, .USPS a:visited, .USPS a:hover, .USPS a:active {
+	color:				#298edf;
+}
+.USPS .days, .USPS .item {
+	color:				#298edf;
+}
+
+/* Yamato */
+
+.Yamato.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#1fc5a3), to(#00a189));
+}
+.Yamato a:link, .Yamato a:visited, .Yamato a:hover, .Yamato a:active {
+	color:				#fecb01;
+}
+.Yamato .days, .Yamato .item {
+	color:				#fecb01;
+}
+.Yamato .ship, .Yamato .deliver {
+	opacity:			0.8;
+}
+.Yamato .icon.error {
+	background:			url("../Images/Icons/error-UPS.png") no-repeat;
+}
+.Yamato .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-UPS.png") no-repeat;
+}
+
+/* Yodel */
+
+.Yodel.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#b8f01a), to(#99cc00));
+	color:				#000000;
+}
+.Yodel a:link, .Yodel a:visited, .Yodel a:hover, .Yodel a:active {
+	color:				#ffffff;
+}
+.Yodel .days, .Yodel .item {
+	color:				#ffffff;
+}
+.Yodel .ship, .Yodel .deliver {
+	opacity:			0.8;
+}
+
+/* Other */
+
+.Other.delivery {
+	background:			-webkit-gradient(linear, left top, left bottom, from(#ccb868), to(#ad944e));
+}
+.Other a:link, .Other a:visited, .Other a:hover, .Other a:active {
+	color:				#4d3b13;
+}
+.Other .days, .Other .item {
+	color:				#4d3b13;
+}
+.Other .ship, .Other .deliver {
+	opacity:			0.8;
+}

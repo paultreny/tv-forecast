@@ -1,0 +1,190 @@
+/* unsupported */
+
+body.unsupported #unsupported {
+	background:			url("../Default@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* front */
+
+.top-left {
+	background:			url("../Images/Front/top-left@2x.png") no-repeat;
+	background-size:	100%;
+}
+.top {
+	background:			url("../Images/Front/top@2x.png") repeat-x;
+	background-size:	281px 27px;
+}
+.top-right {
+	background:			url("../Images/Front/top-right@2x.png") no-repeat;
+	background-size:	100%;
+}
+.left {
+	background:			url("../Images/Front/left@2x.png") repeat-y;
+	background-size:	30px 394px;
+}
+.right {
+	background:			url("../Images/Front/right@2x.png") repeat-y;
+	background-size:	30px 394px;
+}
+.bottom-left {
+	background:			url("../Images/Front/bottom-left@2x.png") no-repeat;
+	background-size:	100%;
+}
+.bottom {
+	background:			url("../Images/Front/bottom@2x.png") repeat-x;
+	background-size:	281px 51px;
+}
+.bottom-right {
+	background:			url("../Images/Front/bottom-right@2x.png") no-repeat;
+	background-size:	100%;
+}
+#resizer-front, #resizer-back {
+	background:			url("../Images/Back/resizer@2x.png") no-repeat;
+	background-size:	15px 16px;
+}
+
+#scrollbar * {
+    background-size:	100%;
+}
+
+#info {
+	background:			url("../Images/Front/info@2x.png") no-repeat top left;
+	background-size:	17px 34px;
+}
+#add {
+	background:			url("../Images/Front/add@2x.png") no-repeat top left;
+	background-size:	17px 34px;
+}
+
+/* back */
+
+#back .top-left {
+	background:			url("../Images/Back/top-left@2x.png") no-repeat;
+	background-size:	100%;
+}
+#back .top {
+	background:			url("../Images/Back/top@2x.png") repeat-x;
+	background-size:	281px 27px;
+}
+#back .top-right {
+	background:			url("../Images/Back/top-right@2x.png") no-repeat;
+	background-size:	100%;
+}
+#back .left {
+	background:			url("../Images/Back/left@2x.png") repeat-y;
+	background-size:	100%;
+}
+#back .right {
+	background:			url("../Images/Back/right@2x.png") repeat-y;
+	background-size:	100%;
+}
+#back .bottom-left {
+	background:			url("../Images/Back/bottom-left@2x.png") no-repeat;
+	background-size:	100%;
+}
+#back .bottom {
+	background:			url("../Images/Back/bottom@2x.png") repeat-x;
+	background-size:	281px 51px;
+}
+#back .bottom-right {
+	background:			url("../Images/Back/bottom-right@2x.png") no-repeat;
+	background-size:	100%;
+}
+#help a {
+	background:			url("../Images/Back/help@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* deliveries */
+
+.button {
+	background:			url("../Images/Front/line@2x.png") repeat-x bottom left;
+	background-size:	1px 1px;
+}
+
+.icon.error {
+	background:			url("../Images/Icons/error@2x.png") no-repeat;
+	background-size:	100%;
+}
+.icon.checkmark {
+	background:			url("../Images/Icons/checkmark@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+.edit-buttons .close {
+	background:			url("../Images/Delivery/close-delivery@2x.png") left center no-repeat;
+	background-size:	13px 13px;
+}
+.edit-buttons .drag {
+	background:			url("../Images/Delivery/drag@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* edit */
+
+.popup {
+	-webkit-border-image:url("../Images/Popup/popup@2x.png") 20 28 22 20 stretch stretch;
+	background-size:	25px 21px;
+}
+#from-popup.popup {
+	-webkit-border-image:url("../Images/Popup/popup-star@2x.png") 20 68 22 20 stretch stretch;
+	background-size:	45px 21px;
+}
+#fav.favorite {
+	background-image:	url("../Images/Popup/popup-star-on@2x.png");
+	background-size:	100%;
+}
+
+input[type="checkbox"] {
+	background:			url("../Images/Back/checkbox-off@2x.png") 0 0 no-repeat;
+	background-size:	100%;
+}
+input[type="checkbox"]:checked {
+	background:			url("../Images/Back/checkbox-on@2x.png") 0 0 no-repeat;
+	background-size:	100%;
+}
+
+/* general */
+
+.tab {
+    -webkit-border-image:url("../Images/Back/tab@2x.png") 16 20 0 20;
+    background-size:	30px 31px;
+}
+#back.general #general-tab,
+#back.sync #sync-tab,
+#back.donate #donate-tab {
+    -webkit-border-image:url("../Images/Back/tab-selected@2x.png") 16 20 0 20;
+    background-size:	30px 31px;
+}
+
+#junecloud a {
+	background:			url("../Images/Back/junecloud@2x.png") no-repeat top left;
+	background-size:	162px 42px;
+}
+
+/* sync */
+
+.segment {
+    -webkit-border-image:url("../Images/Back/segment-left@2x.png") 12 16 12 16;
+    background-size:	26px 25px;
+}
+#register-segment {
+    -webkit-border-image:url("../Images/Back/segment-right@2x.png") 12 16 12 16;
+    background-size:	26px 25px;
+}
+#back.sync.signin #signin-segment {
+    -webkit-border-image:url("../Images/Back/segment-left-selected@2x.png") 12 16 12 16;
+    background-size:	26px 25px;
+}
+#back.sync.register #register-segment {
+    -webkit-border-image:url("../Images/Back/segment-right-selected@2x.png") 12 16 12 16;
+    background-size:	26px 25px;
+}
+
+/* update badge */
+
+#dismissupdate {
+	background:			url("../Images/Front/close-update@2x.png") left center no-repeat;
+	background-size:	16px 16px;
+}

@@ -1,0 +1,109 @@
+/* Canada Post */
+
+.CanadaPost .icon.error {
+	background:			url("../Images/Icons/error-CanadaPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+.CanadaPost .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-CanadaPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* DHL */
+
+.DHL .icon.error {
+	background:			url("../Images/Icons/error-DHL@2x.png") no-repeat;
+	background-size:	100%;
+}
+.DHL .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-DHL@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* Hongkong Post */
+
+.HongkongPost .icon.error {
+	background:			url("../Images/Icons/error-HongkongPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+.HongkongPost .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-HongkongPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* LaPoste */
+
+.LaPoste .icon.error {
+	background:			url("../Images/Icons/error-LaPoste@2x.png") no-repeat;
+	background-size:	100%;
+}
+.LaPoste .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-LaPoste@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* Posten.no */
+
+.Posten-no .icon.error {
+	background:			url("../Images/Icons/error-CanadaPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+.Posten-no .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-CanadaPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* PostNL */
+
+.PostNL .icon.error {
+	background:			url("../Images/Icons/error-HongkongPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+.PostNL .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-HongkongPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* Purolator */
+
+.Purolator .icon.error {
+	background:			url("../Images/Icons/error-DHL@2x.png") no-repeat;
+	background-size:	100%;
+}
+.Purolator .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-DHL@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* Swiss Post */
+
+.SwissPost .icon.error {
+	background:			url("../Images/Icons/error-CanadaPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+.SwissPost .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-CanadaPost@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* UPS */
+
+.UPS .icon.error {
+	background:			url("../Images/Icons/error-UPS@2x.png") no-repeat;
+	background-size:	100%;
+}
+.UPS .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-UPS@2x.png") no-repeat;
+	background-size:	100%;
+}
+
+/* Yamato */
+
+.Yamato .icon.error {
+	background:			url("../Images/Icons/error-UPS@2x.png") no-repeat;
+	background-size:	100%;
+}
+.Yamato .icon.checkmark {
+	background:			url("../Images/Icons/checkmark-UPS@2x.png") no-repeat;
+	background-size:	100%;
+}

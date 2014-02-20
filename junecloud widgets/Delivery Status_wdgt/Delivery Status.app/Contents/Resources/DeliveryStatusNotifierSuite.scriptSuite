@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleEventCode</key>
+	<string>dsnf</string>
+	<key>Commands</key>
+	<dict>
+		<key>ShowNotification</key>
+		<dict>
+			<key>AppleEventClassCode</key>
+			<string>dsnf</string>
+			<key>AppleEventCode</key>
+			<string>show</string>
+			<key>Arguments</key>
+			<dict>
+				<key>withMessage</key>
+				<dict>
+					<key>AppleEventCode</key>
+					<string>mssg</string>
+					<key>Optional</key>
+					<string>YES</string>
+					<key>Type</key>
+					<string>NSString</string>
+				</dict>
+			</dict>
+			<key>CommandClass</key>
+			<string>JUNSendNotificationScriptCommand</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Type</key>
+				<string>NSString</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Name</key>
+	<string>DeliveryStatusNotifierSuite</string>
+	<key>UsedFeatures</key>
+	<array>
+		<string>UnnamedArguments</string>
+	</array>
+</dict>
+</plist>

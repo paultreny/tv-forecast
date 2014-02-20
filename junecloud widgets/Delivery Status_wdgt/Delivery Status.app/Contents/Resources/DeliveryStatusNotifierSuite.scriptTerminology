@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Commands</key>
+	<dict>
+		<key>ShowNotification</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>withMessage</key>
+				<dict>
+					<key>Name</key>
+					<string>with message</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Show a notification with the given title, and an optional message.</string>
+			<key>Name</key>
+			<string>show notification</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>The title to display for the notification.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Show Delivery Status notifications in Notification Center.</string>
+	<key>Name</key>
+	<string>Delivery Status Notifier suite</string>
+</dict>
+</plist>

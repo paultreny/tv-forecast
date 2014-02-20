@@ -1,0 +1,849 @@
+body {
+	margin:				0;
+}
+
+a:link, a:visited {
+	color:				#fff;
+	text-decoration:	none;
+}
+#back label a:link, #back label a:visited, a:hover, a:active {
+	color:				#fff;
+	text-decoration:	underline;
+}
+.delivery a:link, .delivery a:visited {
+	color:				#0000ff;
+	text-decoration:	none;
+}
+.delivery a:hover, .delivery a:active {
+	color:				#0000ff;
+	text-decoration:	underline;
+}
+
+#front {
+	position:			absolute;
+	top:				0;
+	left:				0;
+	right:				0;
+	bottom:				0;
+	-khtml-user-select:	none;
+}
+#loading, #unsupported, #back, #edit, #general, #sync, #donate {
+	display:			none;
+}
+#back.edit #edit, #back.general #general, #back.sync #sync, #back.donate #donate {
+	display:			block;
+}
+
+/* unsupported */
+
+body.unsupported #front {
+	display:			none;
+}
+body.unsupported #unsupported {
+	display:			block;
+	font:				bold 12px/15px "Helvetica Neue", Helvetica;
+	color:				#aaa;
+	text-align:			center;
+	text-shadow:		#000 0 -1px 0;
+	background:			url("../Default.png") no-repeat;
+	position:			absolute;
+	top:				0;
+	left:				0;
+	width:				175px;
+	height:				45px;
+	padding:			27px 50px 56px 50px;
+}
+
+/* front */
+
+.top-left {
+	background:			url("../Images/Front/top-left.png") no-repeat;
+	position:			absolute;
+	top:				0;
+	left:				0;
+	width:				30px;
+	height:				27px;
+}
+.top {
+	background:			url("../Images/Front/top.png") repeat-x;
+	position:			absolute;
+	top:				0;
+	left:				30px;
+	right:				30px;
+	height:				27px;
+}
+.top-right {
+	background:			url("../Images/Front/top-right.png") no-repeat;
+	position:			absolute;
+	top:				0;
+	right:				0;
+	width:				30px;
+	height:				27px;
+}
+.left {
+	background:			url("../Images/Front/left.png") repeat-y;
+	position:			absolute;
+	top:				27px;
+	bottom:				51px;
+	left:				0;
+	width:				30px;
+}
+.right {
+	background:			url("../Images/Front/right.png") repeat-y;
+	position:			absolute;
+	top:				27px;
+	bottom:				51px;
+	right:				0;
+	width:				30px;
+}
+.bottom-left {
+	background:			url("../Images/Front/bottom-left.png") no-repeat;
+	position:			absolute;
+	bottom:				0;
+	left:				0;
+	width:				30px;
+	height:				51px;
+}
+.bottom {
+	background:			url("../Images/Front/bottom.png") repeat-x;
+	position:			absolute;
+	bottom:				0;
+	left:				30px;
+	right:				30px;
+	height:				51px;
+}
+.bottom-right {
+	background:			url("../Images/Front/bottom-right.png") no-repeat;
+	position:			absolute;
+	bottom:				0;
+	right:				0;
+	width:				30px;
+	height:				51px;
+}
+#front .bottom {
+	z-index:			2;
+}
+#resizer-front, #resizer-back {
+	background:			url("../Images/Back/resizer.png") no-repeat top left;
+	position:			absolute;
+	bottom:				14px;
+	right:				10px;
+	width:				20px;
+	height:				21px;
+	z-index:			3;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+	-webkit-transition:	opacity 400ms linear;
+}
+#resizer-front {
+	opacity:			0;
+}
+#front:hover #resizer-front {
+	opacity:			1.0;
+}
+
+#scroll, #edit, #general, #sync, #donate {
+	background-color:	#3b3b3b;
+	position:			absolute;
+	top:				10px;
+	left:				14px;
+	right:				14px;
+	bottom:				18px;
+	padding:			15px;
+	overflow:			hidden;
+}
+#scroll {
+	background:			#454544;
+	background:			-webkit-gradient(linear, left top, left bottom, from(#333333), to(#454544), color-stop(0.8,#454544));
+	padding:			0;
+	bottom:				50px;
+}
+#scrollbar {
+	position:			absolute;
+	top:				21px;
+	right:				19px;
+	bottom:				57px;
+	width:				8px;
+	z-index:			1;
+	opacity:			0;
+	-webkit-transition:	opacity 400ms linear;
+}
+#scrollbar.visible, #scrollbar:hover {
+	opacity:			1;
+	-webkit-transition: none;
+}
+#front.animating #scrollbar {
+	display:			none;
+}
+
+#info, #add {
+	position:			absolute;
+	width:				17px;
+	height:				17px;
+	bottom:				25px;
+	opacity:			0.4;
+	z-index:			4;
+	-webkit-transition:	opacity 400ms linear;
+	text-indent:		-9999px;
+	overflow:			hidden;
+}
+#info {
+	background:			url("../Images/Front/info.png") no-repeat top left;
+	left:				20px;
+}
+#add {
+	background:			url("../Images/Front/add.png") no-repeat top left;
+	right:				21px;
+}
+#front:hover #info, #front:hover #add {
+	opacity:			1.0;
+}
+#info:hover, #add:hover {
+	background-position:bottom left;
+}
+#message {
+	position:			absolute;
+	left:				40px;
+	right:				40px;
+	bottom:				15px;
+	height:				24px;
+	padding-top:		12px;
+	font:				bold 9px "Helvetica Neue", Helvetica;
+	text-align:			center;
+	color:				#fff;
+	text-shadow:		#000 0 -1px 0;
+	white-space:		nowrap;
+	overflow:			hidden;
+	text-overflow:		ellipsis;
+	z-index:			3;
+}
+
+/* back */
+
+#back .top-left {
+	background:			url("../Images/Back/top-left.png") no-repeat;
+}
+#back .top {
+	background:			url("../Images/Back/top.png") repeat-x;
+}
+#back .top-right {
+	background:			url("../Images/Back/top-right.png") no-repeat;
+}
+#back .left {
+	background:			url("../Images/Back/left.png") repeat-y;
+}
+#back .right {
+	background:			url("../Images/Back/right.png") repeat-y;
+}
+#back .bottom-left {
+	background:			url("../Images/Back/bottom-left.png") no-repeat;
+}
+#back .bottom {
+	background:			url("../Images/Back/bottom.png") repeat-x;
+}
+#back .bottom-right {
+	background:			url("../Images/Back/bottom-right.png") no-repeat;
+}
+#general {
+	padding-top:		50px;
+}
+#sync {
+	padding-top:		47px;
+}
+#donate {
+	padding-top:		53px;
+}
+
+#back-buttons {
+	position:			absolute;
+	bottom:				34px;
+	left:				29px;
+	z-index:			1;
+}
+#done-button, #cancel-button {
+	margin:				0 8px 0 0;
+	float:				left;
+}
+#cancel-button {
+	display:			none;
+}
+#back.edit #cancel-button {
+	display:			block;
+}
+#help a {
+	background:			url("../Images/Back/help.png") no-repeat;
+	display:			block;
+	position:			absolute;
+	bottom:				34px;
+	right:				29px;
+	width:				23px;
+	height:				23px;
+	text-indent:		-9999px;
+	overflow:			hidden;
+	z-index:			1;
+}
+
+/* deliveries */
+
+#no-deliveries {
+	font:				bold 14px "Helvetica Neue", Helvetica;
+	color:				#aaa;
+	text-align:			center;
+	text-shadow:		#000 0 -1px 0;
+	position:			relative;
+	max-width:			140px;
+	margin:				20px auto 10px auto;
+	padding:			0 12px;
+}
+#deliveries {
+	position:			absolute;
+	top:				0;
+	left:				0;
+	right:				0;
+	height:				74px;
+	overflow:			hidden;
+	box-shadow:			0 1px 15px rgba(0,0,0,0.6);
+}
+.delivery {
+	background-color:	#e0ded5;
+	position:			relative;
+	height:				74px;
+	overflow:			hidden;
+}
+.button {
+	position:			absolute;
+	top:				0;
+	left:				0;
+	right:				0;
+	height:				74px;
+	opacity:			0.8;
+	background:			url("../Images/Front/line.png") repeat-x bottom left;
+}
+
+.icon {
+	position:			relative;
+	width:				30px;
+	height:				30px;
+	margin:				22px 14px 0 16px;
+	float:				left;
+}
+.icon.error {
+	background:			url("../Images/Icons/error.png") no-repeat;
+}
+.icon.checkmark {
+	background:			url("../Images/Icons/checkmark.png") no-repeat;
+}
+.icon.transit {
+	display:			none;
+}
+.spinner {
+	position:			absolute;
+	top:				4px;
+	left:				4px;
+	width:				20px;
+	height:				20px;
+	display:			none;
+	border:				none;
+}
+.icon.loading .spinner {
+	display:			block;	
+}
+
+.icon.days {
+	width:				38px;
+	height:				50px;
+	margin:				12px 10px 0 12px;
+	text-align:			center;
+}
+.daycount {
+	font:				34px "Helvetica Neue", Helvetica;
+	text-transform:		uppercase;
+	font-weight:		500;
+	letter-spacing:		-0.5pt;
+	line-height:		100%;
+	display:			none;
+}
+.daytext {
+	font:				8px "Helvetica Neue", Helvetica;
+	text-transform:		uppercase;
+	font-weight:		bold;
+	line-height:		12px;
+	display:			none;
+}
+.days .daycount, .days .daytext {
+	display:			block;
+}
+
+.daycount.many {
+	font:				23px "Helvetica Neue", Helvetica;
+	font-weight:		bold;
+	margin-top:			3px;
+}
+.daycount.compress {
+	margin-left:		-4px;
+	letter-spacing:		-4px;
+}
+
+.text {
+	padding:			14px 17px 0 17px;
+}
+#front.scrolling .text {
+	padding-right:		26px;
+}
+.item {
+	position:			relative;
+	font:				13px "Helvetica Neue", Helvetica;
+	font-weight:		bold;
+	line-height:		16px;
+	white-space:		nowrap;
+	overflow-x:			hidden;
+	text-overflow:		ellipsis;
+}
+.item.number {
+	padding-left:		14px;
+	z-index:			1;
+}
+.no {
+	position:			absolute;
+	top:				3px;
+	left:				0;
+	width:				11px;
+	height:				11px;
+}
+.ship, .deliver {
+	position:			relative;
+	font:				10px "Helvetica Neue", Helvetica;
+	line-height:		14px;
+	white-space:		nowrap;
+	overflow:			hidden;
+	text-overflow:		ellipsis;
+}
+.updating .ship {
+	font-weight:		bold;
+	margin-top:			16px;
+}
+.clickable {
+	z-index:			3;
+}
+
+.delivery:hover .text, .delivery.dragging .text {
+	padding-right:		25px;
+}
+.delivery:hover .deliver, .delivery.dragging .deliver {
+	padding-right:		40px;
+}
+
+.edit-buttons {
+	position:			absolute;
+	bottom:				6px;
+	right:				5px;
+	background:			rgba(0,0,0,0.4);
+	background:			-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.3)), to(rgba(0,0,0,0.45)));
+	text-shadow:		rgba(0,0,0,0.5) 0 -1px 0;
+	border-bottom:		1px solid rgba(0,0,0,0.5);
+	border-radius:		8px;
+	z-index:			99;
+	opacity:			0;
+	-webkit-transition:	opacity 400ms ease-out;
+}
+.delivery:hover .edit-buttons, .delivery.dragging .edit-buttons {
+	opacity:			1;
+	-webkit-transition:	opacity 1000ms ease-out;
+}
+#front.scrolling .edit-buttons {
+	right:				14px;
+}
+.delivery .edit-buttons:hover {
+	opacity:			1;
+	-webkit-transition:	opacity 0ms ease-out;
+}
+.delivery .edit-buttons .edit {
+	display:			block;
+	font:				bold 10px "Helvetica Neue", Helvetica;
+	color:				rgba(255,255,255,0.8);
+	text-transform:		uppercase;
+	text-decoration:	none;
+	white-space:		nowrap;
+	padding:			2px 25px 2px 8px;
+}
+.edit-buttons .close {
+	position:			absolute;
+	top:				0;
+	right:				0;
+	width:				20px;
+	height:				100%;
+	background:			url("../Images/Delivery/close-delivery.png") left center no-repeat;
+	text-indent:		-9999px;
+	overflow:			hidden;
+}
+.edit-buttons .drag {
+	background:			url("../Images/Delivery/drag.png") no-repeat;
+	position:			absolute;
+	top:				-23px;
+	right:				0;
+	width:				22px;
+	height:				20px;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+/* edit */
+
+label {
+	display:			block;
+	font:				bold 10px "Helvetica Neue", Helvetica;
+	color:				#fff;
+	margin:				0 0 2px 0;
+}
+div.disabled > label {
+	opacity:			0.4;
+}
+input, select, #dateselects {
+	font:				11px "Lucida Grande";
+	width:				100%;
+	margin:				0 0 5px 0;
+}
+input.submit {
+	width:				1px;
+	height:				1px;
+	visibility:			hidden;
+}
+
+.popup {
+	position:			relative;
+	-webkit-border-image:url("../Images/Popup/popup.png") 10 14 11 10 stretch stretch;
+	border-width:		10px 14px 11px 10px;
+	height:				0;
+	margin:				0 0 5px 0;
+	z-index:			1;
+	-apple-dashboard-region: dashboard-region(control rectangle) !important;
+}
+.popup .text {
+	position:			absolute;
+	top:				-10px;
+	left:				-2px;
+	right:				0;
+	height:				21px;
+	font:				11px "Lucida Grande";
+	color:				#000;
+	text-shadow:		rgba(255,255,255,0.5) 0 1px 0;
+	padding:			3px 0 0 0;
+	overflow:			hidden;
+	text-overflow:		ellipsis;
+	white-space:		nowrap;
+	-apple-dashboard-region: dashboard-region(control rectangle) !important;
+	-khtml-user-select:	none;
+}
+#from-popup.popup {
+	-webkit-border-image:url("../Images/Popup/popup-star.png") 10 34 11 10 stretch stretch;
+	border-width:		10px 34px 11px 10px;
+}
+.popup select {
+	position:			absolute;
+	width:				auto;
+	top:				-9px;
+	left:				-10px;
+	right:				-13px;
+	opacity:			0;
+	-apple-dashboard-region: dashboard-region(control rectangle) !important;
+}
+div.disabled .popup {
+	opacity:			0.4;
+}
+div.disabled .popup select {
+	display:			none;
+}
+#from-popup.popup select {
+	right:				-13px;
+}
+#fav {
+	background:			none;
+	position:			absolute;
+	top:				-10px;
+	right:				-34px;
+	width:				21px;
+	height:				21px;
+}
+#fav.favorite {
+	background-image:	url("../Images/Popup/popup-star-on.png");
+}
+
+#month-popup, #day-popup, #year-popup {
+	width:				69px;
+	margin:				0 5px 15px 0;
+	float:				left;
+}
+#day-popup {
+	width:				25px;
+}
+#year-popup {
+	width:				39px;
+}
+
+#dateField.JP #month-popup, #dateField.JP #day-popup {
+	width:				36px;
+}
+#dateField.JP #year-popup {
+	width:				60px;
+}
+
+input[type="text"], input[type="password"] {
+	border:				1px solid #2b2b2b;
+	box-shadow:			rgba(0,0,0,0.4) 0 1px 2px inset;
+	padding:			3px 2px 3px 3px;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+#dateselects div.popup:last-child {
+	margin-right:		0;
+}
+
+label#editlabel {
+	font-size:			11px;
+	margin:				-2px 0 5px 0;
+}
+label#historylabel {
+	font-size:			11px;
+	margin-top:			10px;
+}
+
+#edit.noextra #extraField {
+	display:			none;
+}
+#nameField, #noField, #extraField, #passwordField, 
+#syncEmailField, #syncPasswordField, #syncConfirmField, #syncNameField {
+	padding-right:		7px;
+}
+
+input[type="checkbox"] {
+	background:			url("../Images/Back/checkbox-off.png") 0 0 no-repeat;
+	width:				15px;
+	height:				14px;
+	margin:				5px 5px 0 0;
+	float:				left;
+	-webkit-appearance: none;
+}
+input[type="checkbox"]:checked {
+	background:			url("../Images/Back/checkbox-on.png") 0 0 no-repeat;
+}
+input[type="checkbox"]:disabled {
+	opacity:			0.4;
+}
+#sizeField label, #syncTermsField label, #donatedField label {
+	padding-top:		5px;
+	margin-bottom:		5px;
+}
+
+#historylabel {
+	clear:				left;
+}
+
+/* general */
+
+#tabs {
+	display:			none;
+}
+#back.general #tabs, #back.sync #tabs, #back.donate #tabs {
+	display:			block;
+}
+
+.tabs {
+	position:			absolute;
+	top:				17px;
+	left:				20px;
+	right:				20px;
+	height:				31px;
+	z-index:			1;
+}
+.tab {
+	position:			relative;
+	width:				33%;
+	height:				31px;
+	font:				bold 12px "Helvetica Neue", Helvetica;
+	color:				#999;
+	text-shadow:		#000 0 -1px 0;
+	text-align:			center;
+	box-sizing:			border-box;
+    -webkit-border-image:url("../Images/Back/tab.png") 8 10 0 10;
+    border-width:		8px 10px 0 10px;
+	float:				left;
+}
+.tabs #sync-tab.tab {
+	width:				34%;
+}
+.tab:hover {
+	color:				#fff;
+}
+#back.general #general-tab,
+#back.sync #sync-tab,
+#back.donate #donate-tab {
+    -webkit-border-image:url("../Images/Back/tab-selected.png") 8 10 0 10;
+	color:				#fff;
+}
+
+#about {
+	position:			absolute;
+	left:				10px;
+	right:				10px;
+	bottom:				50px;
+	text-align:			center;
+}
+#junecloud a {
+	display:			block;
+	background:			url("../Images/Back/junecloud.png") no-repeat top left;
+	width:				162px;
+	height:				21px;
+	margin:				0 auto;
+	text-indent:		-9999px;
+	overflow:			hidden;
+}
+#junecloud a:hover, #junecloud a:active {
+	background-position:bottom left;
+}
+#version {
+	font:				bold 9px "Helvetica Neue", Helvetica;
+	line-height:		9px;
+	color:				#fff;
+	margin:				0 auto;
+}
+
+/* sync */
+
+.segmented {
+	position:			relative;
+	width:				100%;
+	height:				25px;
+	margin:				0 0 8px 0;
+	padding:			0;
+}
+.segment {
+	position:			relative;
+	width:				50%;
+	height:				25px;
+	font:				bold 11px "Helvetica Neue", Helvetica;
+	color:				#999;
+	text-shadow:		#000 0 -1px 0;
+	text-align:			center;
+	box-sizing:			border-box;
+    -webkit-border-image:url("../Images/Back/segment-left.png") 6 8 6 8;
+    border-width:		6px 8px 6px 8px;
+	float:				left;
+}
+#register-segment {
+    -webkit-border-image:url("../Images/Back/segment-right.png") 6 8 6 8;
+}
+.segment:hover {
+	color:				#fff;
+}
+#back.sync.signin #signin-segment {
+    -webkit-border-image:url("../Images/Back/segment-left-selected.png") 6 8 6 8;
+	color:				#fff;
+}
+#back.sync.register #register-segment {
+    -webkit-border-image:url("../Images/Back/segment-right-selected.png") 6 8 6 8;
+	color:				#fff;
+}
+
+#login-type {
+	font:				bold 12px "Helvetica Neue", Helvetica;
+	color:				#fff;
+	margin:				5px 0 5px 0;
+	clear:				left;
+}
+
+#back.sync.signin #syncConfirmField, #back.sync.signin #syncNameField, #back.sync.signin #syncTermsField {
+	display:			none;
+}
+
+#signin-button, #register-button, #logout-button {
+	margin:				5px 0 8px 0;
+	float:				left;
+}
+#signin-button {
+	margin-right:		12px;
+}
+#forgot {
+	font:				bold 10px "Helvetica Neue", Helvetica;
+	color:				#fff;
+	margin:				10px 0 7px 0;
+	float:				left;
+}
+#login-type, #login-info, #logout-button,
+#back.sync.signin #register-button,
+#back.sync.register #signin-button, #back.sync.register #forgot,
+#back.sync.signedin .segmented, #back.sync.signedin form, #back.sync.signedin #forgot {
+	display:			none;
+}
+#back.sync.signedin #login-type, #back.sync.signedin #login-info, #back.sync.signedin #logout-button {
+	display:			block;
+}
+
+/* donate */
+
+#delivery-info, #login-info, #sync-info, #donate-info {
+	font:				bold 10px "Helvetica Neue", Helvetica;
+	line-height:		14px;
+	color:				#fff;
+	margin:				0 0 10px 0;
+	clear:				left;
+}
+#delivery-info {
+	margin-top:			10px;
+}
+#donate-button {
+	margin:				0 0 8px 0;
+}
+
+/* update badge */
+
+#updatebox {
+	position:			absolute;
+	bottom:				22px;
+	left:				17px;
+	background:			rgba(140,5,0,1);
+	background:			-webkit-gradient(linear, left top, left bottom, from(rgba(205,30,0,1)), to(rgba(155,5,0,1)));
+	text-shadow:		rgba(50,0,0,0.6) 0 -1px 0;
+	border-top:			1px solid rgba(255,210,180,0.4);
+	border-bottom:		1px solid rgba(50,0,0,0.7);
+	box-shadow:			0 0 3px rgba(0,0,0,0.4);
+	border-radius:		11px;
+	z-index:			99;
+	visibility:			hidden;
+	opacity:			0;
+	-webkit-transition:	opacity 400ms ease-out, visibility 500ms ease-out;
+}
+#updatebox.available {
+	visibility:			visible;
+	opacity:			1;
+	-webkit-transition:	opacity 1000ms ease-out, visibility 1100ms ease-out;
+}
+#getupdate {
+	display:			block;
+	font:				bold 11px "Helvetica Neue", Helvetica;
+	color:				#fff;
+	text-transform:		uppercase;
+	text-decoration:	none;
+	white-space:		nowrap;
+	padding:			3px 29px 4px 10px;
+}
+#dismissupdate {
+	position:			absolute;
+	top:				0;
+	right:				0;
+	width:				22px;
+	height:				100%;
+	background:			url("../Images/Front/close-update.png") left center no-repeat;
+}
+
+/* large size */
+
+#front.large #message {
+	font-size:			10px;
+	height:				25px;
+	padding-top:		11px;
+}
+#front.large .text {
+	padding-top:		14px;
+}
+#front.large .ship, #front.large .deliver {
+	font-size:			11px;
+	line-height:		14px;
+}

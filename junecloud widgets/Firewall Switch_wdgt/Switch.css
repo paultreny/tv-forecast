@@ -1,0 +1,76 @@
+﻿body {
+	margin:			0;
+}
+#front {
+	position:		absolute;
+	top:			0;
+	left:			58px;
+	width:			64px;
+	height:			77px;
+}
+#icon {
+	position:		absolute;
+	background:		url("Default.png") no-repeat -58px 0;
+	top:			0;
+	left:			0;
+	width:			64px;
+	height:			77px;
+}
+#icon.off {
+	background:		url("Off.png") no-repeat -58px 0;
+}
+#back {
+	position:		absolute;
+	background:		url("Back.png") no-repeat 0 0;
+	top:			0;
+	left:			0;
+	width:			180px;
+	height:			80px;
+	display:		none;
+}
+
+#infoButton {
+	position:		absolute;
+	bottom:			6px;
+	right:			6px;
+	width:			13px;
+	height:			13px;
+}
+
+input, select {
+	display:		block;
+	font:			11px Helvetica;
+	width:			114px;
+	float:			left;
+}
+select {
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+label {
+	display:		block;
+	font:			9px Helvetica;
+	font-weight:	bold;
+	color:			#FFF;
+	margin:			6px 5px 0 0;
+	float:			left;
+}
+
+#openafterfield {
+	position:		absolute;
+	top:			11px;
+	left:			19px;
+}
+#credit {
+	display:		block;
+	position:		absolute;
+	background:		url("Junecloud.png") no-repeat 0 0;
+	top:			38px;
+	left:			16px;
+	width:			91px;
+	height:			18px;
+}
+#doneButton {
+	position:		absolute;
+	top:			35px;
+	right:			17px;
+}

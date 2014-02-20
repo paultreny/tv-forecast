@@ -1,0 +1,22 @@
+body.unsupported #unsupported {
+	padding-top:	33px;
+}
+
+#no-deliveries {
+	margin-top:		29px;
+}
+
+.delivery .edit-buttons .edit {
+	padding-top:	2px;
+	padding-bottom:	0;
+	margin-bottom:	-1px;
+}
+
+label {
+	margin:				0 0 -1px 0;
+}
+
+#getupdate {
+	padding-top:	3px;
+	padding-bottom:	1px;
+}

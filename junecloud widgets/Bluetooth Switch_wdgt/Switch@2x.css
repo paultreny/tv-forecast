@@ -1,0 +1,16 @@
+﻿#icon {
+	background:			url("Default@2x.png") no-repeat -58px 0;
+	background-size:	180px 80px;
+}
+#icon.off {
+	background:			url("Off@2x.png") no-repeat -58px 0;
+	background-size:	180px 80px;
+}
+#back {
+	background:			url("Back@2x.png") no-repeat 0 0;
+	background-size:	100%;
+}
+#credit {
+	background:			url("Junecloud@2x.png") no-repeat 0 0;
+	background-size:	100%;
+}
